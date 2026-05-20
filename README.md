@@ -1,5 +1,7 @@
 **Gmail AI Threat Scanner**
 
+_NOTE: This is best suited for personal or individual gmail instances ONLY and NOT for enterprise deployment._
+
 A lightweight, zero-infra Gmail security extension built using Google Apps Script. It monitors incoming emails, extracts metadata, and runs real-time anomaly analysis using low-latency AI models via API.
 
 It operates in two modes simultaneously:
