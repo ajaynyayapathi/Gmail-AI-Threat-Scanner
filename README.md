@@ -6,7 +6,11 @@ A lightweight, zero-infra Gmail security extension built using Google Apps Scrip
 
 It operates in two modes simultaneously:
   1. Automated Background Scan: A time-driven trigger runs every minute to evaluate new unread emails and apply color-coded labels (AI-Safe, AI-Suspicious, AI-Malicious).
-  2. Interactive Sidebar Add-on: A contextual sidebar panel that opens when reading an email to show detailed risk scores, verdicts, specific red flags, and an interactive "Mark as False Positive" button to manually fix misclassifications.
+     <img width="190" height="150" alt="image" src="https://github.com/user-attachments/assets/4b7081ca-80dc-4661-af85-8262d9774f69" />
+
+  3. Interactive Sidebar Add-on: A contextual sidebar panel that opens when reading an email to show detailed risk scores, verdicts, specific red flags, and an interactive "Mark as False Positive" button to manually fix misclassifications.
+     <img width="318" height="546" alt="image" src="https://github.com/user-attachments/assets/535279ed-b8d3-463f-98b9-366294b2dee9" />
+
 
 **Installation & Setup**
   1. Initialize the Script Project
@@ -28,6 +32,11 @@ To allow the script to make outbound API calls, modify mailbox labels, and fetch
   2. Scroll down to Script Properties and click Add script property.
   3. Set Property to GEMINI_API_KEY (or your chosen model's key identifier).
   4. Set Value to your secret string from your API dashboard, then save.
+
+**How to get an API Key**
+If you have a an API key for a GEMINI already, use it but otherwise follow below steps:
+  1. Go to Google AI Studio
+  2. Create a Free API Key.
 
 **Automate Background Execution**
 
