@@ -6,9 +6,11 @@ A lightweight, zero-infra Gmail security extension built using Google Apps Scrip
 
 It operates in two modes simultaneously:
   1. Automated Background Scan: A time-driven trigger runs every minute to evaluate new unread emails and apply color-coded labels (AI-Safe, AI-Suspicious, AI-Malicious).
+     
      <img width="190" height="150" alt="image" src="https://github.com/user-attachments/assets/4b7081ca-80dc-4661-af85-8262d9774f69" />
 
   3. Interactive Sidebar Add-on: A contextual sidebar panel that opens when reading an email to show detailed risk scores, verdicts, specific red flags, and an interactive "Mark as False Positive" button to manually fix misclassifications.
+     
      <img width="318" height="546" alt="image" src="https://github.com/user-attachments/assets/535279ed-b8d3-463f-98b9-366294b2dee9" />
 
 
