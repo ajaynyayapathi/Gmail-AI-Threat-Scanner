@@ -23,7 +23,6 @@ function callGeminiScanner(emailData) {
   
   if (!apiKey) return { status: "SUSPICIOUS", riskScore: 50, verdict: "API Key missing.", redFlags: ["Configure GEMINI_API_KEY"] };
 
-  // FIX: Using gemini-3.1-flash-lite or gemini-3.5-flash for maximum speed
   const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`;
   
   const systemPrompt = "You are an expert cybersecurity mail filter. Analyze the following email for signs of phishing, business email compromise (BEC), suspicious credential links, artificial urgency, or layout anomalies. You must return your analysis strictly in valid JSON format with keys: 'status' (either 'SAFE', 'SUSPICIOUS', or 'MALICIOUS'), 'riskScore' (0 to 100), 'verdict' (one sentence summary), and 'redFlags' (an array of strings listing specific reasons). Do not wrap the JSON response in markdown blocks.";
@@ -42,7 +41,7 @@ function callGeminiScanner(emailData) {
     "generationConfig": {
       "responseMimeType": "application/json",
       "temperature": 0.1,
-      "thinkingConfig": { "thinkingBudget": 0 } // FIX: Forces the model to bypass thinking steps for ultra-low latency
+      "thinkingConfig": { "thinkingBudget": 0 } 
     }
   };
   
@@ -127,7 +126,7 @@ function buildSecurityCard(analysis, sender) {
     section.addWidget(CardService.newTextParagraph().setText("No operational red flags noted in body text pattern matching."));
   }
   
-  // ADD INTERACTION: Show False Positive button if the email wasn't classified as completely clean
+  // Show False Positive button if the email wasn't classified as completely clean
   if (analysis.status !== "SAFE") {
     const buttonSet = CardService.newButtonSet();
     
@@ -147,8 +146,7 @@ function buildSecurityCard(analysis, sender) {
   return card.build();
 }
 /**
- * Automatically scans unread inbox messages, analyzes them via Gemini,
- * and applies security labels dynamically in the background.
+ * Automatically scans unread inbox messages, analyzes them via Gemini and applies security labels dynamically in the background.
  */
 function autoScanInbox() {
   // Ensure your custom security labels exist in your Gmail account
