@@ -1,0 +1,31 @@
+{
+  "timeZone": "Etc/GMT",
+  "dependencies": {
+    "enabledAdvancedServices": []
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8",
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/gmail.addons.execute",
+    "https://www.googleapis.com/auth/gmail.readonly",
+    "https://www.googleapis.com/auth/gmail.modify",
+    "https://www.googleapis.com/auth/script.locale",
+    "https://www.googleapis.com/auth/script.external_request"
+  ],
+  "addOns": {
+    "common": {
+      "name": "AI Threat Scanner",
+      "logoUrl": "https://www.gstatic.com/images/icons/material/system/1x/security_black_24dp.png",
+      "useLocaleFromApp": true,
+      "universalActions": []
+    },
+    "gmail": {
+      "contextualTriggers": [
+        {
+          "unconditional": {},
+          "onTriggerFunction": "analyzeOpenedEmail"
+        }
+      ]
+    }
+  }
+}
