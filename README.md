@@ -13,6 +13,22 @@ It operates in two modes simultaneously:
      
      <img width="318" height="546" alt="image" src="https://github.com/user-attachments/assets/535279ed-b8d3-463f-98b9-366294b2dee9" />
 
+## How it works
+
+The add-on extracts metadata from each email (sender, subject, headers, and
+body content) and sends it to an AI model via API for real-time anomaly
+analysis. Two things happen with the result:
+
+- The background trigger runs every minute, checks unread mail, and applies
+  a color-coded Gmail label based on the verdict: AI-Safe, AI-Suspicious, or
+  AI-Malicious.
+- When you open an individual email, the sidebar shows the full verdict:
+  a risk score, the specific red flags that drove it, and a "Mark as False
+  Positive" button so you can correct the model when it gets something wrong.
+
+This is a personal-inbox tool, not an enterprise deployment. It runs on your
+own Google Apps Script project, under your own API key, with no external
+server or data store involved.
 
 **Installation & Setup**
   1. Initialize the Script Project
